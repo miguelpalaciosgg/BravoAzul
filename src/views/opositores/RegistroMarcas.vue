@@ -9,7 +9,7 @@
     </div>
 
     <!-- Listado de marcas -->
-    <div v-if="marcas.value.length > 0" class="marcas-section">
+    <div v-if="marcas.length > 0" class="marcas-section">
       <h2>Historial de Marcas</h2>
       
       <!-- Loading state -->
@@ -41,7 +41,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="marca in marcas.value" :key="marca.id" class="hover:bg-gray-50">
+            <tr v-for="marca in marcas" :key="marca.id" class="hover:bg-gray-50">
               <td class="px-4 py-2 border">
                 {{ formatearFecha(marca.fecha) }}
               </td>
@@ -77,7 +77,7 @@
 
       <!-- Detalle expandido -->
       <div
-        v-if="marcaExpandida && marcas.value.find(m => m.id === marcaExpandida)"
+        v-if="marcaExpandida && marcas.find((m: MarcasCNP) => m.id === marcaExpandida)"
         class="mt-6 p-4 bg-gray-50 border-l-4 border-blue-500 rounded"
       >
         <button
@@ -87,16 +87,16 @@
           ✕ Cerrar
         </button>
         <div
-          v-if="marcas.value.find(m => m.id === marcaExpandida)?.observaciones"
+          v-if="marcas.find((m: MarcasCNP) => m.id === marcaExpandida)?.observaciones"
           class="mb-2"
         >
           <p class="text-sm text-gray-600">
             <span class="font-semibold">Observaciones:</span>
-            {{ marcas.value.find(m => m.id === marcaExpandida)?.observaciones }}
+            {{ marcas.find((m: MarcasCNP) => m.id === marcaExpandida)?.observaciones }}
           </p>
         </div>
         <p class="text-xs text-gray-500">
-          Registrado: {{ formatearFecha(marcas.value.find(m => m.id === marcaExpandida)?.created_at || '') }}
+          Registrado: {{ formatearFecha(marcas.find((m: MarcasCNP) => m.id === marcaExpandida)?.created_at || '') }}
         </p>
       </div>
     </div>
