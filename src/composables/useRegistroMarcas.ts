@@ -8,7 +8,7 @@ export const useRegistroMarcas = () => {
   const error = ref<string | null>(null)
 
   // Computed desenvuelve automáticamente el ref para TypeScript
-  const marcas = computed(() => marcasRef.value)
+  const marcas = computed<MarcasCNP[]>(() => marcasRef.value)
 
   const getMarcas = async (usuarioId: string) => {
     try {
