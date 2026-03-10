@@ -1,11 +1,14 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { supabase } from '@/lib/supabase'
 import type { MarcasCNP, CrearMarcaCNP } from '@/../env'
 
 export const useRegistroMarcas = () => {
-  const marcas = ref<MarcasCNP[]>([])
+  const marcasRef = ref<MarcasCNP[]>([])
   const loading = ref(false)
   const error = ref<string | null>(null)
+
+  // Computed desenvuelve automáticamente el ref para TypeScript
+  const marcas = computed(() => marcasRef.value)
 
   const getMarcas = async (usuarioId: string) => {
     try {
@@ -20,7 +23,7 @@ export const useRegistroMarcas = () => {
 
       if (fetchError) throw fetchError
 
-      marcas.value = data || []
+      marcasRef.value = data || []
       return data
     } catch (err: any) {
       error.value = err.message
@@ -44,7 +47,7 @@ export const useRegistroMarcas = () => {
       if (insertError) throw insertError
 
       if (data) {
-        marcas.value.unshift(data[0])
+        marcasRef.value.unshift(data[0])
       }
 
       return data?.[0]
@@ -71,9 +74,9 @@ export const useRegistroMarcas = () => {
       if (updateError) throw updateError
 
       if (data) {
-        const index = marcas.value.findIndex(m => m.id === id)
+        const index = marcasRef.value.findIndex(m => m.id === id)
         if (index !== -1) {
-          marcas.value[index] = data[0]
+          marcasRef.value[index] = data[0]
         }
       }
 
@@ -99,7 +102,7 @@ export const useRegistroMarcas = () => {
 
       if (deleteError) throw deleteError
 
-      marcas.value = marcas.value.filter(m => m.id !== id)
+      marcasRef.value = marcasRef.value.filter(m => m.id !== id)
     } catch (err: any) {
       error.value = err.message
       console.error('Error eliminando marca:', err)
