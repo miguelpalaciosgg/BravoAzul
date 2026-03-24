@@ -1,55 +1,32 @@
-# bravo-azul
+# 👮‍♂️ Bravo Azul - Plataforma para Opositores
 
-This template should help get you started developing with Vue 3 in Vite.
+**Bravo Azul** es una aplicación web moderna diseñada para la preparación y el estudio de opositores (academias de policía). Desarrollada con un enfoque en el rendimiento y la experiencia de usuario, proporciona un entorno de estudio robusto, rápido y escalable.
 
-## Recommended IDE Setup
+## ✨ Características Principales
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+* **Entorno Optimizado:** Interfaz rápida y reactiva construida con Vue.js para facilitar el estudio continuo.
+* **Desarrollo Tipado y Seguro:** Código base íntegramente en TypeScript para garantizar la escalabilidad, mantenibilidad y reducir errores en producción.
+* **Testing Automatizado:** Pruebas unitarias y de componentes configuradas con Vitest para asegurar la máxima calidad del código.
+* **Despliegue Continuo (CI/CD):** Configurado para despliegues ágiles y automatizados en la nube a través de Vercel.
 
-## Recommended Browser Setup
+## 🛠️ Stack Tecnológico
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+* **Frontend Framework:** Vue.js
+* **Build Tool:** Vite
+* **Lenguaje:** TypeScript
+* **Testing:** Vitest
+* **Linter & Formatter:** ESLint
+* **Despliegue:** Vercel
 
-## Type Support for `.vue` Imports in TS
+## 🚀 Instalación y Despliegue en Local
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Requisitos Previos
+* Node.js (v18 o superior recomendado)
+* Gestor de paquetes (`npm`, `pnpm` o `yarn`)
 
-## Customize configuration
+### Pasos para Desarrollo
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
-''
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/BravoAzul.git](https://github.com/tu-usuario/BravoAzul.git)
+   cd BravoAzul
